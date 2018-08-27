@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="spid_metadata" path="/acs" methods="GET POST">
+        <default key="_controller">spid.security.controller:metadataAction</default>
+    </route>
+    <route id="spid_assertion_consumer_service" path="/acs" methods="GET POST">
+        <default key="_controller">fos_user.security.controller:acsAction</default>
+    </route>
+    <route id="spid_single_logout" path="/slo" methods="GET POST">
+        <default key="_controller">fos_user.security.controller:singleLogoutAction</default>
+    </route>
+    <route id="spid_login" path="/login" methods="GET POST">
+        <default key="_controller">fos_user.security.controller:loginAction</default>
+    </route>
+</routes>
